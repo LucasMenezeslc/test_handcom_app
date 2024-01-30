@@ -1,0 +1,57 @@
+[
+  {
+    "id": "1",
+    "title": "Cimento",
+    "code": "ABC123",
+    "or": "12345",
+    "lot": "L001",
+    "codeBar": "987654321",
+    "quantity": 10.0,
+    "status": true,
+    "wasMoved": false
+  },
+  {
+    "id": "2",
+    "title": "Argamassa",
+    "code": "XYZ789",
+    "or": "67890",
+    "lot": "L002",
+    "codeBar": "123456789",
+    "quantity": 20.0,
+    "status": false,
+    "wasMoved": false
+  },
+  {
+    "id": "3",
+    "title": "Madeira de Pinus",
+    "code": "DEF456",
+    "or": "54321",
+    "lot": "L003",
+    "codeBar": "654321987",
+    "quantity": 15.0,
+    "status": true,
+    "wasMoved": false
+  },
+  {
+    "id": "4",
+    "title": "Aço Galvanizado",
+    "code": "GHI789",
+    "or": "98765",
+    "lot": "L004",
+    "codeBar": "321987654",
+    "quantity": 25.0,
+    "status": false,
+    "wasMoved": false
+  },
+  {
+    "id": "5",
+    "title": "Tijolos Cerâmicos",
+    "code": "JKL012",
+    "or": "23456",
+    "lot": "L005",
+    "codeBar": "789012345",
+    "quantity": 30.0,
+    "status": false,
+    "wasMoved": false
+  }
+]

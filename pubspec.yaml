@@ -1,0 +1,48 @@
+name: test_handcom_app
+description: A new Flutter project.
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.4 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Ui
+  cupertino_icons: ^1.0.2
+
+  # State
+  mobx: ^2.3.0+1
+  flutter_mobx: ^2.2.0+2
+
+  # Core
+  build_runner: ^2.4.6
+  flutter_lints: ^2.0.0
+  mobx_codegen: ^2.6.0+1
+  flutter_modular: ^5.0.3
+  
+   
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/images/
+    - assets/jsons/
+  #   - images/a_dot_ham.jpeg
+
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Bold.otf
+        - asset: assets/fonts/Poppins-Regular.otf
+    - family: Poppins-SemiBold
+      fonts:
+        - asset: assets/fonts/Poppins-SemiBold.otf
+
