@@ -6,7 +6,7 @@ import 'package:test_handcom_app/app/modules/movements/presenter/components/tabs
 import 'package:test_handcom_app/app/modules/movements/presenter/movements_store.dart';
 
 class MovementsPage extends StatefulWidget {
-  const MovementsPage({super.key});
+  const MovementsPage({Key? key});
 
   @override
   State<MovementsPage> createState() => _MovementsPageState();

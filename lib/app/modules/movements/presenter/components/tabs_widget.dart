@@ -10,39 +10,45 @@ class TabsWidget extends StatelessWidget {
   final ObservableList<Product> productsList;
 
   const TabsWidget({
-    super.key,
+    Key? key,
     required this.itemFoundQuantity,
     required this.totalQuantity,
     required this.productsList,
-  });
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        children: [
-          FiltersWidget(productList: productsList),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Text('Itens Encontrados: $itemFoundQuantity'),
-              Text('Peso: $totalQuantity kg'),
-            ],
+    return CustomScrollView(
+      slivers: [
+        SliverPadding(
+          padding: const EdgeInsets.all(8.0),
+          sliver: SliverToBoxAdapter(
+            child: FiltersWidget(productList: productsList),
           ),
-          const SizedBox(height: 20),
-          Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: productsList.length,
-              itemBuilder: (context, index) {
-                final item = productsList[index];
-                return ItemCardWidget(item: item);
-              },
+        ),
+        SliverPadding(
+          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+          sliver: SliverToBoxAdapter(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Itens Encontrados: $itemFoundQuantity'),
+                Text('Peso: $totalQuantity kg'),
+              ],
             ),
-          )
-        ],
-      ),
+          ),
+        ),
+        const SliverToBoxAdapter(child: SizedBox(height: 20)),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              final item = productsList[index];
+              return ItemCardWidget(item: item);
+            },
+            childCount: productsList.length,
+          ),
+        ),
+      ],
     );
   }
 }

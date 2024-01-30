@@ -54,8 +54,7 @@ class FiltersWidget extends StatelessWidget {
                       enabledColor: true,
                       enabledIcon: false,
                       onPressed: () {
-                        if (store.onFilter) {
-                        } else {
+                        if (!store.onFilter) {
                           store.onFilter = true;
                           return store.updateListFilter(productList, false);
                         }
@@ -72,8 +71,7 @@ class FiltersWidget extends StatelessWidget {
                       enabledColor: true,
                       enabledIcon: false,
                       onPressed: () {
-                        if (store.onFilter) {
-                        } else {
+                        if (!store.onFilter) {
                           store.onFilter = true;
                           return store.updateListFilter(productList, true);
                         }
@@ -84,14 +82,13 @@ class FiltersWidget extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(width: 10),
-                  store.onFilter
-                      ? IconButton(
-                          icon: const Icon(Icons.clear),
-                          onPressed: () {
-                            store.resetFilter();
-                          },
-                        )
-                      : const SizedBox()
+                  if (store.onFilter)
+                    IconButton(
+                      icon: const Icon(Icons.clear),
+                      onPressed: () {
+                        store.resetFilter();
+                      },
+                    )
                 ],
               ),
             ],
